@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { Hero } from "@/components/delush/Hero";
 import { Products } from "@/components/delush/Products";
@@ -5,9 +6,9 @@ import { WhyDeLush } from "@/components/delush/WhyDeLush";
 import { Gallery } from "@/components/delush/Gallery";
 import { EnquiryForm } from "@/components/delush/EnquiryForm";
 import { Footer } from "@/components/delush/Footer";
-import { WhatsAppButton } from "@/components/delush/WhatsAppButton";
 
 const title = "Gifting an Experience — De LUSH Resort Corporate Gifting";
+
 const description =
   "Premium corporate gifting from De LUSH Resort, Bavdhan, Pune. Stay, dining and wellness vouchers with 10% off on 20+ vouchers and brandable presentation.";
 
@@ -26,6 +27,15 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
+  useEffect(() => {
+    // Always start the homepage at the Hero section.
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "instant",
+    });
+  }, []);
+
   return (
     <main className="overflow-x-hidden">
       <Hero />
@@ -34,7 +44,6 @@ function Index() {
       <Gallery />
       <EnquiryForm />
       <Footer />
-      <WhatsAppButton />
     </main>
   );
 }
