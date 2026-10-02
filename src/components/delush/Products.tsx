@@ -8,18 +8,20 @@ import lobby from "@/assets/3.jpg";
 const products = [
   {
     name: "DeLUSH Experience Credit",
-    price: "From ₹10,000",
+    oldPrice: "₹10,000",
+    price: "₹8,500",
     badge: "Best for Bulk Orders",
     image: lobby,
     points: [
       "Flexible corporate voucher, redeemable across room, dining & wellness",
-      "10% off on a minimum of 20 vouchers",
+      "15% off on a minimum of 20 vouchers",
       "Brandable for corporate gifting programmes",
     ],
   },
   {
     name: "DeLUSH Afterglow",
-    price: "₹7,500 + taxes",
+    oldPrice: "₹11,500",
+    price: "₹7,500",
     badge: "Most Popular",
     image: suite,
     points: [
@@ -30,7 +32,8 @@ const products = [
   },
   {
     name: "DeLUSH Pause",
-    price: "₹3,999 + taxes",
+    oldPrice: "₹7,500",
+    price: "₹3,999",
     badge: null,
     image: dining,
     points: [
@@ -41,6 +44,7 @@ const products = [
   },
   {
     name: "DeLUSH TopUp",
+    oldPrice: null,
     price: "Premium add-on",
     badge: null,
     image: spa,
@@ -60,6 +64,7 @@ export function Products() {
           <p className="text-xs uppercase tracking-[0.4em] text-primary">
             Corporate gifting collection
           </p>
+
           <h2 className="mt-4 max-w-2xl font-display text-4xl leading-tight sm:text-5xl">
             Four ways to gift De LUSH
           </h2>
@@ -70,6 +75,7 @@ export function Products() {
             <Reveal key={p.name} delay={i * 110}>
               <TiltCard className="group h-full">
                 <article className="flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-soft transition-shadow duration-300 hover:shadow-luxe">
+                  {/* Image */}
                   <div className="relative h-44 overflow-hidden">
                     <img
                       src={p.image}
@@ -77,18 +83,44 @@ export function Products() {
                       loading="lazy"
                       className="h-full w-full object-cover transition-transform duration-[900ms] group-hover:scale-110"
                     />
+
                     {p.badge && (
                       <span className="absolute left-4 top-4 rounded-full bg-[image:var(--gradient-gold)] px-3 py-1 text-[0.6rem] uppercase tracking-[0.2em] text-ink">
                         {p.badge}
                       </span>
                     )}
                   </div>
+
+                  {/* Content */}
                   <div className="flex flex-1 flex-col p-6">
-                    <h3 className="font-display text-2xl">{p.name}</h3>
-                    <p className="mt-1 text-sm uppercase tracking-[0.16em] text-primary">
-                      {p.price}
-                    </p>
+                    <h3 className="font-display text-2xl">
+                      {p.name}
+                    </h3>
+
+                    {/* Price */}
+                    <div className="mt-2 flex items-center gap-2">
+                      {p.oldPrice && (
+                        <del className="text-sm text-muted-foreground/70 decoration-1">
+                          {p.oldPrice}
+                        </del>
+                      )}
+
+                      <span className="text-sm font-medium uppercase tracking-[0.16em] text-primary">
+                        {p.price}
+                      </span>
+
+                      {p.name === "DeLUSH Experience Credit" ||
+                      p.name === "DeLUSH Afterglow" ||
+                      p.name === "DeLUSH Pause" ? (
+                        <span className="text-[0.65rem] uppercase tracking-[0.12em] text-muted-foreground">
+                          + taxes
+                        </span>
+                      ) : null}
+                    </div>
+
                     <div className="rule-gold my-5 opacity-60" />
+
+                    {/* Points */}
                     <ul className="flex-1 space-y-3 text-sm leading-relaxed text-muted-foreground">
                       {p.points.map((pt) => (
                         <li key={pt} className="flex gap-3">
@@ -97,6 +129,8 @@ export function Products() {
                         </li>
                       ))}
                     </ul>
+
+                    {/* Enquiry */}
                     <a
                       href="#enquiry"
                       className="mt-6 inline-block text-xs uppercase tracking-[0.22em] text-foreground underline-offset-8 transition-colors hover:text-primary hover:underline"
@@ -109,8 +143,6 @@ export function Products() {
             </Reveal>
           ))}
         </div>
-
-        
       </div>
     </section>
   );

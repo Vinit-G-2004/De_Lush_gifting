@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { Hero } from "@/components/delush/Hero";
 import { Products } from "@/components/delush/Products";
+import { Corporate } from "@/components/delush/Corporate";
 import { WhyDeLush } from "@/components/delush/WhyDeLush";
 import { Gallery } from "@/components/delush/Gallery";
 import { EnquiryForm } from "@/components/delush/EnquiryForm";
@@ -40,6 +41,7 @@ function Index() {
     <main className="overflow-x-hidden">
       <Hero />
       <Products />
+      <Corporate />
       <WhyDeLush />
       <Gallery />
       <EnquiryForm />

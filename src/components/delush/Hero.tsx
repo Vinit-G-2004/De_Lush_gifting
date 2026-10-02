@@ -15,7 +15,6 @@ export function Hero() {
 
   return (
     <section className="relative flex min-h-[100svh] items-center overflow-hidden">
-
       {/* Background */}
       <div
         className="absolute inset-0 -z-20 scale-110"
@@ -36,9 +35,7 @@ export function Hero() {
       <div className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,oklch(0.24_0.016_60/0.84),oklch(0.24_0.016_60/0.38))]" />
 
       <div className="mx-auto grid w-full max-w-7xl gap-12 px-6 py-28 md:grid-cols-[1.1fr_0.9fr] md:items-center">
-
         <div>
-
           {/* Location */}
           <Reveal>
             <p className="text-sm font-semibold uppercase tracking-[0.38em] text-gold-soft sm:text-base">
@@ -104,7 +101,6 @@ export function Hero() {
             }}
           >
             <div className="surface-glass mx-auto max-w-sm rotate-[-4deg] rounded-2xl p-8">
-
               <div className="flex items-center justify-between text-xs font-semibold uppercase tracking-[0.3em] text-muted-foreground">
                 <span>De LUSH</span>
                 <span>Corporate</span>
@@ -121,19 +117,23 @@ export function Hero() {
               <div className="rule-gold my-6" />
 
               <div className="flex items-end justify-between">
-                <span className="font-display text-4xl font-bold text-foreground">
-                  ₹10,000
-                </span>
+                <div className="flex items-baseline gap-3">
+                  <span className="font-display text-2xl font-semibold text-muted-foreground line-through decoration-primary decoration-2">
+                    ₹10,000
+                  </span>
+
+                  <span className="font-display text-4xl font-bold text-foreground">
+                    ₹8,500
+                  </span>
+                </div>
 
                 <span className="text-xs font-semibold uppercase tracking-[0.22em] text-muted-foreground">
                   Starting value
                 </span>
               </div>
-
             </div>
           </div>
         </Reveal>
-
       </div>
     </section>
   );
