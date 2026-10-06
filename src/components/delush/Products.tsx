@@ -14,7 +14,6 @@ const products = [
     image: lobby,
     points: [
       "Flexible corporate voucher, redeemable across room, dining & wellness",
-      "15% off on a minimum of 20 vouchers",
       "Brandable for corporate gifting programmes",
     ],
   },
@@ -75,6 +74,7 @@ export function Products() {
             <Reveal key={p.name} delay={i * 110}>
               <TiltCard className="group h-full">
                 <article className="flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-soft transition-shadow duration-300 hover:shadow-luxe">
+                  
                   {/* Image */}
                   <div className="relative h-44 overflow-hidden">
                     <img
@@ -109,13 +109,13 @@ export function Products() {
                         {p.price}
                       </span>
 
-                      {p.name === "DeLUSH Experience Credit" ||
-                      p.name === "DeLUSH Afterglow" ||
-                      p.name === "DeLUSH Pause" ? (
+                      {/* Taxes only for Afterglow and Pause */}
+                      {(p.name === "DeLUSH Afterglow" ||
+                        p.name === "DeLUSH Pause") && (
                         <span className="text-[0.65rem] uppercase tracking-[0.12em] text-muted-foreground">
                           + taxes
                         </span>
-                      ) : null}
+                      )}
                     </div>
 
                     <div className="rule-gold my-5 opacity-60" />
