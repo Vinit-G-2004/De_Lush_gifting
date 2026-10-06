@@ -109,7 +109,7 @@ export function Products() {
                         {p.price}
                       </span>
 
-                      {/* Taxes only for Afterglow and Pause */}
+                      {/* + taxes only for Afterglow and Pause */}
                       {(p.name === "DeLUSH Afterglow" ||
                         p.name === "DeLUSH Pause") && (
                         <span className="text-[0.65rem] uppercase tracking-[0.12em] text-muted-foreground">
