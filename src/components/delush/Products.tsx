@@ -8,16 +8,18 @@ import lobby from "@/assets/3.jpg";
 const products = [
   {
     name: "DeLUSH Experience Value",
+    oldPrice: "₹10,000",
     price: "₹8,500",
     badge: "Best for Bulk Orders",
     image: lobby,
     points: [
-      "Flexible corporate voucher, redeemable across room & dining experiences ",
+      "Flexible corporate voucher, redeemable across room & dining experiences",
       "Brandable for corporate gifting programmes",
     ],
   },
   {
     name: "DeLUSH Afterglow",
+    oldPrice: null,
     price: "₹7,500",
     badge: "Most Popular",
     image: suite,
@@ -29,6 +31,7 @@ const products = [
   },
   {
     name: "DeLUSH Pause",
+    oldPrice: null,
     price: "₹3,999",
     badge: null,
     image: dining,
@@ -40,6 +43,7 @@ const products = [
   },
   {
     name: "DeLUSH TopUp",
+    oldPrice: null,
     price: "Premium add-on",
     badge: null,
     image: spa,
@@ -92,8 +96,14 @@ export function Products() {
                       {p.name}
                     </h3>
 
-                    {/* Current Price Only */}
-                    <div className="mt-2 flex items-center gap-2">
+                    {/* Price */}
+                    <div className="mt-2 flex flex-wrap items-center gap-2">
+                      {p.oldPrice && (
+                        <del className="text-sm text-muted-foreground/70 decoration-1">
+                          {p.oldPrice}
+                        </del>
+                      )}
+
                       <span className="text-sm font-medium uppercase tracking-[0.16em] text-primary">
                         {p.price}
                       </span>
