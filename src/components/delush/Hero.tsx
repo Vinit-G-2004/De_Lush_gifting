@@ -35,6 +35,7 @@ export function Hero() {
       <div className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,oklch(0.24_0.016_60/0.84),oklch(0.24_0.016_60/0.38))]" />
 
       <div className="mx-auto grid w-full max-w-7xl gap-12 px-6 py-28 md:grid-cols-[1.1fr_0.9fr] md:items-center">
+        {/* Left Content */}
         <div>
           {/* Location */}
           <Reveal>
@@ -59,6 +60,7 @@ export function Hero() {
               Corporate gifts your teams and clients actually remember —
               stays, dining at Mayavi and wellness escapes, delivered as
               elegant, brandable vouchers.
+              
             </p>
           </Reveal>
 
@@ -67,24 +69,7 @@ export function Hero() {
             <div className="mt-10 flex flex-wrap gap-4">
               <a
                 href="#enquiry"
-                className="
-                  inline-flex
-                  items-center
-                  justify-center
-                  rounded-full
-                  bg-[image:var(--gradient-gold)]
-                  px-9
-                  py-4
-                  text-base
-                  font-bold
-                  uppercase
-                  tracking-[0.15em]
-                  text-ink
-                  shadow-luxe
-                  transition-transform
-                  duration-300
-                  hover:-translate-y-0.5
-                "
+                className="inline-flex items-center justify-center rounded-full bg-[image:var(--gradient-gold)] px-9 py-4 text-base font-bold uppercase tracking-[0.15em] text-ink shadow-luxe transition-transform duration-300 hover:-translate-y-0.5"
               >
                 Request a corporate quote
               </a>
@@ -95,19 +80,21 @@ export function Hero() {
         {/* Corporate Voucher */}
         <Reveal delay={420} className="hidden md:block">
           <div
-            className="animate-float [transform-style:preserve-3d]"
+            className="animate-float"
             style={{
               transform: `translateY(${offset * -0.06}px)`,
             }}
           >
             <div className="surface-glass mx-auto max-w-sm rotate-[-4deg] rounded-2xl p-8">
+              {/* Card Header */}
               <div className="flex items-center justify-between text-xs font-semibold uppercase tracking-[0.3em] text-muted-foreground">
                 <span>De LUSH</span>
                 <span>Corporate</span>
               </div>
 
+              {/* Title */}
               <p className="mt-8 font-display text-3xl font-semibold text-foreground">
-                Experience Credit
+                Experience Value
               </p>
 
               <p className="mt-2 text-base font-medium text-muted-foreground">
@@ -116,19 +103,27 @@ export function Hero() {
 
               <div className="rule-gold my-6" />
 
-              <div className="flex items-end justify-between">
-                <div className="flex items-baseline gap-3">
-                  <span className="font-display text-2xl font-semibold text-muted-foreground line-through decoration-primary decoration-2">
-                    ₹10,000
-                  </span>
+              {/* Offer Price */}
+              <p className="mb-2 text-xs font-semibold uppercase tracking-[0.22em] text-muted-foreground">
+                Special Corporate Offer
+              </p>
 
-                  <span className="font-display text-4xl font-bold text-foreground">
-                    ₹8,500
-                  </span>
-                </div>
+              <div className="flex flex-wrap items-baseline gap-3">
+                <span className="font-display text-xl font-medium text-muted-foreground line-through decoration-primary decoration-2">
+                  ₹10,000
+                </span>
 
-                <span className="text-xs font-semibold uppercase tracking-[0.22em] text-muted-foreground">
-                  Starting value
+                <span className="font-display text-4xl font-bold text-foreground">
+                  ₹8,500
+                </span>
+              </div>
+
+              <div className="rule-gold my-6" />
+
+              {/* Footer */}
+              <div className="flex items-center justify-between gap-3">
+                <span className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+                  15% off on Delush Experience old price 10000 offer price 8500, Exclusive Corporate Gifting
                 </span>
               </div>
             </div>

@@ -7,8 +7,7 @@ import lobby from "@/assets/3.jpg";
 
 const products = [
   {
-    name: "DeLUSH Experience Credit",
-    oldPrice: "₹10,000",
+    name: "DeLUSH Experience Value",
     price: "₹8,500",
     badge: "Best for Bulk Orders",
     image: lobby,
@@ -19,7 +18,6 @@ const products = [
   },
   {
     name: "DeLUSH Afterglow",
-    oldPrice: "₹11,500",
     price: "₹7,500",
     badge: "Most Popular",
     image: suite,
@@ -31,7 +29,6 @@ const products = [
   },
   {
     name: "DeLUSH Pause",
-    oldPrice: "₹7,500",
     price: "₹3,999",
     badge: null,
     image: dining,
@@ -43,7 +40,6 @@ const products = [
   },
   {
     name: "DeLUSH TopUp",
-    oldPrice: null,
     price: "Premium add-on",
     badge: null,
     image: spa,
@@ -74,7 +70,6 @@ export function Products() {
             <Reveal key={p.name} delay={i * 110}>
               <TiltCard className="group h-full">
                 <article className="flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-soft transition-shadow duration-300 hover:shadow-luxe">
-                  
                   {/* Image */}
                   <div className="relative h-44 overflow-hidden">
                     <img
@@ -97,19 +92,13 @@ export function Products() {
                       {p.name}
                     </h3>
 
-                    {/* Price */}
+                    {/* Current Price Only */}
                     <div className="mt-2 flex items-center gap-2">
-                      {p.oldPrice && (
-                        <del className="text-sm text-muted-foreground/70 decoration-1">
-                          {p.oldPrice}
-                        </del>
-                      )}
-
                       <span className="text-sm font-medium uppercase tracking-[0.16em] text-primary">
                         {p.price}
                       </span>
 
-                      {/* + taxes only for Afterglow and Pause */}
+                      {/* Taxes only for Afterglow and Pause */}
                       {(p.name === "DeLUSH Afterglow" ||
                         p.name === "DeLUSH Pause") && (
                         <span className="text-[0.65rem] uppercase tracking-[0.12em] text-muted-foreground">
