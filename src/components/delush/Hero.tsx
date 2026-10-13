@@ -58,7 +58,7 @@ export function Hero() {
           <Reveal delay={240}>
             <p className="mt-7 max-w-xl text-lg font-medium leading-relaxed text-background/90 sm:text-xl lg:text-[1.35rem]">
               Corporate gifts your teams and clients actually remember —
-              stays, dining at Mayavi and wellness escapes, delivered as
+              stays, dining at Mayavi, delivered as
               elegant, brandable vouchers.
               
             </p>
