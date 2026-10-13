@@ -12,7 +12,7 @@ const products = [
     badge: "Best for Bulk Orders",
     image: lobby,
     points: [
-      "Flexible corporate voucher, redeemable across room, dining & wellness",
+      "Flexible corporate voucher, redeemable across room & dining experiences ",
       "Brandable for corporate gifting programmes",
     ],
   },
